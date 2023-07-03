@@ -1,9 +1,9 @@
 <button class="button">
- <slot />
+  <slot />
 </button>
 
 <style>
-      .button {
+  .button {
     background: var(--colorCta);
     border: none;
     border-radius: calc(
@@ -28,5 +28,4 @@
     outline: none;
     text-decoration: none;
   }
-
 </style>
