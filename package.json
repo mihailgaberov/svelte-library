@@ -8,7 +8,7 @@
     "dev": "run-p dev:server dev:client",
     "dev:client": "rollup -c -w",
     "dev:server": "json-server --watch db.json",
-    "start": "sirv public --no-clear"
+    "start": "sirv public --no-clear --single"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.0",
