@@ -1,10 +1,11 @@
 <script>
+    import BookCover from "../common/BookCover.svelte";
     export let books = [];
 </script>
 
 <ul>
     {#each books as book}
-        <li>{book.title}</li>
+        <BookCover {book} />
     {/each}
 </ul>
 
