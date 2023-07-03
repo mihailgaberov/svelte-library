@@ -1,13 +1,13 @@
 <script>
 	import Library from "./library/Library.svelte"
 
-	function handleBookSelect(id) {
-		console.log('>>> id: ', id)
+	function handleBookSelect(event) {
+		console.log('>>> id: ', event.detail.id)
 	}
 </script>
 
 <main>
-	<Library onBookSelect={handleBookSelect} />
+	<Library on:book-select={handleBookSelect} />
 </main>
 
 <style>
