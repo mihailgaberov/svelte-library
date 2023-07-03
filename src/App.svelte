@@ -1,26 +1,22 @@
 <script>
+	import { Route, Router } from "svelte-routing";
+
 	import Details from "./library/Details.svelte";
-import Library from "./library/Library.svelte"
+	import Library from "./library/Library.svelte";
 
-
-	let page = 'library'
-	let pageArgs = {}
-
-
-	function handleBookSelect(event) {
-		page = 'detail'
-		pageArgs = event.detail
-	}
+	export let url = "";
 </script>
 
-<main>
-	{#if page === 'detail'}
-		<Details {...pageArgs} />
-		{:else}
-		<Library on:book-select={handleBookSelect} />
-	{/if}
-	
-</main>
+<Router {url}>
+	<main>
+		<Route path="/books/:id" let:params>
+			<Details id={params.id} />
+		</Route>
+		<Route path="/">
+			<Library />
+		</Route>
+	</main>
+</Router>
 
 <style>
 	main {

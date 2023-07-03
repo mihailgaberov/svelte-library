@@ -22,7 +22,7 @@
   Go home and share them with your family.
 </p>
 <Button>+ Add Book</Button>
-<BookGrid on:book-select {books} />
+<BookGrid {books} />
 
 <style>
   header {

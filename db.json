@@ -31,7 +31,8 @@
       "author": "Harper Lee",
       "cover": "https://i.imgur.com/BPmn7bUm.jpg",
       "about": "A girl learns to trust the wisdom of her father and not be dismayed by the prejudice around here.",
-      "variation": 0
+      "variation": 0,
+      "favorite": true
     },
     {
       "id": 5,
