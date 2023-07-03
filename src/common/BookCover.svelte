@@ -1,37 +1,54 @@
 <script>
     import { createEventDispatcher } from "svelte";
 
-    
+    export let interactive = false;
     export let book = {};
-    
-    const dispatch = createEventDispatcher();
 
+    const dispatch = createEventDispatcher();
 
     function isValidUrl(url) {
         return url && /http.+\.(jpg|png|gif)$/.test(url);
     }
 </script>
 
-<!-- svelte-ignore a11y-invalid-attribute -->
-<a
-    href="#"
-    class="book book--interactive book--variation-{book.variation} {isValidUrl(
-        book.cover
-    )
-        ? 'book--cover'
-        : 'book--no-cover'}"
-    on:click={() => dispatch('book-select', {id: book.id})}
->
-    <span
-        class="cover"
-        style={isValidUrl(book.cover)
-            ? "background-image: url(" + book.cover + ")"
-            : ""}
+{#if interactive}
+    <a
+        href="#"
+        class="book book--interactive book--variation-{book.variation} {isValidUrl(
+            book.cover
+        )
+            ? 'book--cover'
+            : 'book--no-cover'}"
+        on:click={() => dispatch("book-select", { id: book.id })}
     >
-        <span class="title">{book.title || ""}</span>
-        <span class="author">{book.author || ""}</span>
-    </span>
-</a>
+        <span
+            class="cover"
+            style={isValidUrl(book.cover)
+                ? "background-image: url(" + book.cover + ")"
+                : ""}
+        >
+            <span class="title">{book.title || ""}</span>
+            <span class="author">{book.author || ""}</span>
+        </span>
+    </a>
+{:else}
+    <div
+        class="book book--variation-{book.variation}
+{isValidUrl(book.cover) ? 'book--cover' : 'book--no-cover'}"
+    >
+        <div
+            class="cover"
+            style={isValidUrl(book.cover)
+                ? "background-image: url(" + book.cover + ")"
+                : ""}
+        >
+            <header>
+                <h2 class="title">{book.title || ""}</h2>
+            </header>
+            <div class="author">{book.author || ""}</div>
+        </div>
+    </div>
+{/if}
 
 <style>
     .book {
