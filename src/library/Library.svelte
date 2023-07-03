@@ -3,6 +3,8 @@
   import Button from "../common/Button.svelte";
   import BookGrid from "./BookGrid.svelte";
   import { httpGet } from "../common/api";
+
+  export let onBookSelect;
  
   let books = []
   onMount(async () => {
@@ -21,7 +23,7 @@
   Go home and share them with your family.
 </p>
 <Button>+ Add Book</Button>
-<BookGrid {books} />
+<BookGrid {onBookSelect} {books} />
 
 <style>
   header {

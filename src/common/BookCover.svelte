@@ -1,11 +1,12 @@
 <script>
     export let book = {};
-
+    export let onClick;
     function isValidUrl(url) {
         return url && /http.+\.(jpg|png|gif)$/.test(url);
     }
 </script>
 
+<!-- svelte-ignore a11y-invalid-attribute -->
 <a
     href="#"
     class="book book--interactive book--variation-{book.variation} {isValidUrl(
@@ -13,6 +14,7 @@
     )
         ? 'book--cover'
         : 'book--no-cover'}"
+    on:click={() => onClick(book.id)}
 >
     <span
         class="cover"
