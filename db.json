@@ -41,6 +41,33 @@
       "cover": "",
       "about": "Man hunts whale with a vengeance. In the end, he's the last man stand. I guess he won.",
       "variation": 1
+    },
+    {
+      "title": "teazsd",
+      "author": "sadfvxc",
+      "cover": "sadf",
+      "about": "asd",
+      "variation": 0,
+      "favorite": false,
+      "id": 6
+    },
+    {
+      "title": "asd",
+      "author": "21312",
+      "cover": "12asd",
+      "about": "asd",
+      "variation": 0,
+      "favorite": false,
+      "id": 7
+    },
+    {
+      "title": "testr",
+      "author": "ok",
+      "cover": "k",
+      "about": "k",
+      "variation": 2,
+      "favorite": false,
+      "id": 8
     }
   ]
 }
