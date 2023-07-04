@@ -16,6 +16,8 @@
     }
 
     $: console.log({title, author, cover, about })
+
+    $: book = {title, author, cover, about}
   </script>
   
   <BackButtonRow />
@@ -33,6 +35,7 @@
     <div>
       <Header>Preview</Header>
       <div class="preview">
+        <BookCover {book} />
       </div>
     </div>
   </form>
