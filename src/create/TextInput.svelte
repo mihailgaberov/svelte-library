@@ -1,11 +1,16 @@
 <script>
     export let label;
     export let value;
+    export let multiline = false;
 </script>
 
 <label>
     <span>{label}</span>
-    <input type="text" bind:value />
+    {#if multiline}
+        <textarea bind:value />
+    {:else}
+        <input type="text" bind:value />
+    {/if}
 </label>
 
 <style>

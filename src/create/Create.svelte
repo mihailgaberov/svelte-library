@@ -7,12 +7,15 @@
     import TextInput from "./TextInput.svelte";
 
     let title = '';
+    let author = '';
+    let cover = '';
+    let about = '';
 
     function handleInput(event) {
         title = event.target.value
     }
 
-    $: console.log({title})
+    $: console.log({title, author, cover, about })
   </script>
   
   <BackButtonRow />
@@ -22,6 +25,9 @@
   <form>
     <div class="fields">
         <TextInput label="Title" bind:value={title} />
+        <TextInput label="Author" bind:value={author} />
+        <TextInput label="Cover URL" bind:value={cover} />
+        <TextInput label="About" bind:value={about} multiline />
     </div>
   
     <div>
